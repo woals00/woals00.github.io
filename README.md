@@ -1,232 +1,222 @@
-# Grape-Academic-Theme
+# plainwhite
 
-<a href="https://jekyll-themes.com">
-    <img src="https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg" height="20" alt="Jekyll Themes Shield" loading="lazy">
-</a>
+Simplistic jekyll portfolio-style theme for writers.
 
----
+**Demo**: [samarsault.com](https://samarsault.com)
 
-![home](https://chrjabs.github.io/Grape-Academic-Theme/assets/img/portfolio.png)
+![plainwhite theme preview](/screenshot.png)
 
-Welcome to Grape Academic Theme!
-This theme is based on [Grape Theme](https://github.com/naye0ng/Grape-Theme) and modifies it to be more directly applicable as an academic portfolio page.
-It can still include a blog, but that is optional.
+## Installation on Github Pages
 
-[Demo](https://chrjabs.github.io/Grape-Academic-Theme)
+Add this line to your site's `_config.yml`:
 
-## Features
-
-Some of these features are optional and can be turned on or off in the `_config.yml` file.
-
-### [Portfolio Homepage](https://chrjabs.github.io/Grape-Academic-Theme)
-
-Portfolio page giving an overview of your research.
-
-### [Publications List](https://chrjabs.github.io/Grape-Academic-Theme/publications)
-
-A optional list of your publications auto-generated from a BibTeX file.
-Additional information can be linked to from the BibTeX file.
-
-### [Presentations List](https://chrjabs.github.io/Grape-Academic-Theme/presentations)
-
-A optional list of your presentations auto-generated for a data file.
-
-### [Blog](https://chrjabs.github.io/Grape-Academic-Theme/blog)
-
-An optional blog for any posts you want to publish.
-
-### [Hub Pages](https://chrjabs.github.io/Grape-Academic-Theme/example-hub)
-
-Hub pages are intended for easy linking in your presentations.
-They collect links and additional information related to your presentation so that you only have to put one link on your slides.
-They can be manually generated or automatically from one of your publication entries.
-
-## Installation and Serving Local Version for Testing
-
-1. Fork and clone the Grape Academic Theme repo
-
-   ```
-   git clone https://github.com/chrjabs/Grape-Academic-Theme.git
-   ```
-
-2. Install Jekyll 
-
-   ```
-   gem install jekyll
-   ```
-
-3. Install the theme's dependencies
-
-   ```
-   bundle install
-   ```
-
-4. Update `_config.yml`, `_data/projects.yml`, `_data/projects.yml` and `_bibliography/publications.bib` with your own settings.
-
-5. Run the Jekyll server
-
-   ```
-   bundle exec jekyll serve
-   ```
-
-## Publishing
-
-Grape-Academic-Theme uses jekyll-scholar and therefore needs to manually be published to GitHub pages.
-A script for publishing on a `gh-pages` branch is included.
-Run `_scripts/publish.sh` from the main project directory and the page will be built, copied to the `gh-pages` branch and published.
-Make sure that GitHub pages is set up to publish that branch.
-If additional scripts should be executed in the HTML root, they can be placed in `_scripts/publish.d` and will be automatically executed.
-
-These are step-by-step instructions for forking and publishing the theme at your `<username>.github.io` github pages website:
-
-1. For the repository to a repository named `<username>/<username>.github.io`
-2. Go to the settings of the new repository and navigate to the "Pages" tab.
-  There, change the source for github pages to the `gh-pages` branch of the repository.
-3. Clone the repository and go through the installation steps listed above
-4. In `_config.yml`, change the `baseurl` option to an empty string (`""`) to host the webpage in the root of your `github.io` page
-5. Commit the change and (with a working jekyll install) run `_scripts/publish.sh`
-6. _Wait a couple of minutes_ and the demo content will show up at `<username>.github.io`
-
-## Customizing
-
-Grape-Theme has two great features: the profile section and the project section of the portfolio page. Just by changing `_config.yml` and `projects.yml`, you can use all of these features.
-
-### Feature Settings
-
-The blog, publications, and presentations pages are optional and can be turned on or off in the config file.
-
-### Favicon
-
-Generate your favicons with [realfavicongenerator.net](https://realfavicongenerator.net/) and place them in the root directory.
-The code to include them is already set up in the template.
-
-### Site configuration
-
-```
-baseurl: "{subpath}"
-
-theme_settings :
-  title: {blog title}
+```yaml
+remote_theme: samarsault/plainwhite-jekyll
 ```
 
-### Profile Settings
+## Installation
 
-Profile is displayed on the index page, and also experience and skills are displayed on the portfolio page.
-The profile is configured in `_data/profile.yml`.
+Add this line to your Jekyll site's `Gemfile`:
 
-```
-image: assets/img/smile.png
-username: Christoph Jabs
-description: creator of the Grape-Academic-Theme! Grape-Academic-Theme is a modification of the Grape-Theme by naye0ng, making it more suitable as an academic portfolio.
-webpage: https://chrjabs.github.io
-experience:
-  - start: 2017-05-03
-    end: 2018-05-06
-    experience : company name, title
-interests:
-  - Interest 1
-  - Interest 2
-skills: 
-  - skill: HTML5 & CSS
-    value: 85  # Percent value
+```ruby
+gem "plainwhite"
 ```
 
-### Presentations
+And add this line to your Jekyll site's `_config.yml`:
 
-The data for the presentations page can be defined in `data/presentations.yml`.
-
-```
-- presentation:
-    title: A nice presentation
-    event: Fancy conference
-    date: 05/2022
-    comment: This is some comment text that can do _Markdown_
-    slides: https://www.google.com # potential link to slides
-- presentation:
-    title: A second presentation
-    event: Another conference
-    date: 03/2022
+```yaml
+theme: plainwhite
 ```
 
-### Hub Pages
+And then execute:
 
-For an example on how to configure a hub page, see the `example-hub.md` file.
+    $ bundle
 
-### Pagination
+Or install it yourself as:
 
-Defines the number of posts to be shown on one page.
+    $ gem install plainwhite
 
-```
-paginate: 5
-```
+## Usage
 
-### Portfolio Settings
+The "plainwhite" key in \_config.yml is used to customize the theme data.
 
-![home](https://chrjabs.github.io/Grape-Academic-Theme/assets/img/portfolio.png)
+```yaml
+plainwhite:
+  name: Adam Denisov
+  tagline: Developer. Designer
+  date_format: "%b %-d, %Y"
 
-The Project configuration is available in `_data/projects.yml`.
-
-The portfolio page provides projects and detailed views by modal.
-If `modal : False` is selected, modal will not be displayed on site. 
-
-- **print** : 
-  
-  - If `print: True` is selected, it will be displayed on landing page
-  
-- **modal** 
-  
-  - If `modal: True` is selected, modal will be displayed on the Portfolio page
-  
-    ![home](https://chrjabs.github.io/Grape-Academic-Theme/assets/img/modal.png)
-
-```
-print: True
-modal: True  
+  social_links:
+    twitter: samarsault
+    github: samarsault
+    linkedIn: in/samarsault # format: locale/username
 ```
 
-Add details(link, description) about your projects
+**Updating Placeholder Image**
 
-```
-url: https://github.com/naye0ng/Grape-Theme # Full URL
-image: "portfolio.png" # path: assets/project/
-date: 2019.06.09 - 2019.07.11
-title: 
-summary: 
-description:  
-# modal contents
-contents:
-  - title:
-    image:      	    
-    description: 
+The placeholder portfolio image can be replaced by the desired image by placing it as `assets/portfolio.png` in your jekyll website, or by changing the following line in `_config.yaml`
+
+```yaml
+plainwhite:
+  portfolio_image:  "assets/portfolio.png" # the path from the base directory of the site to the image to display (no / at the start)
 ```
 
-### Colors
+To use a different image for dark mode, e.g. with different colors that work better in dark mode, add a `portfolio_image_dark` entry in addition to the `portfolio_image`.
 
-You can change colors at once. colors are in `_sass/base/_variable.scss`
+```yaml
+plainwhite:
+  portfolio_image:      "assets/portfolio.png"
+  portfolio_image_dark: "assets/portfolio_dark.png"
+```
 
-## Posts in Grape theme
+**Comments (Disqus)**
 
-You can confirm how to draw tags at [here](https://grape-theme.netlify.com/2019/06/08/markdown-and-html.html) and [here](https://grape-theme.netlify.com/2019/06/09/grape-theme-style.html)
+Comments on posts can be enabled by specifying your disqus_shortname under plainwhite in `_config.yml`. For example,
 
-### Create a new post
+```yaml
+plainwhite:
+  disqus_shortname: games
+```
 
-1. Create a `.md` inside `_posts` folder
-   ```
-   2019-07-11-grape-theme.md
-   ```
+**Google Analytics**
 
-2. Write the [Front Matter](https://jekyllrb.com/docs/front-matter/) and content in the file.
-   ```
-   ---
-   layout: post
-   title: title
-   subtitle : subtitle
-   tags: [tag1, tag2]
-   author: 
-   comments : 
-   ---
-   ```
+It can be enabled by specifying your analytics id under plainwhite in `_config.yml`
 
-## Licence
+```yaml
+plainwhite:
+  analytics_id: "< YOUR ID >"
+```
 
-The theme is available as open source under the terms of the [MIT Licence](https://opensource.org/licenses/MIT).
+**Sitemap**
+
+It can be toggled by the following line to under plainwhite in `_config.yml`
+
+```yaml
+plainwhite:
+  sitemap: true
+```
+
+**Excerpts**
+
+Excerpts can be enabled by adding the following line to your `_config.yml`
+
+```yaml
+show_excerpts: true
+```
+
+**Layouts**
+
+- Home
+- Page
+- Post
+
+**Navigation**
+
+Navigation can be enabled by adding the following line to your `_config.yml`
+
+```yaml
+plainwhite:
+  navigation:
+    - title: My Work
+      url: "/my-work"
+    - title: Resume
+      url: "/resume"
+```
+
+**Mobile**
+
+By default, Plainwhite places the sidebar (logo, name, tagline etc.) above the content on mobile (narrow screens).
+To condense it (moving some things to the bottom of the page and making the rest smaller) so it takes up less space, add the following to your `_config.yml`:
+
+```yaml
+plainwhite:
+  condensed_mobile:
+    - home
+    - post
+    - page
+```
+
+This chooses which layouts (types of page) should be condensed on mobile screens. E.g. if you want everything but the landing page to be condensed, remove `home` from the list. This option does not affect rendering on wider screens.
+
+**Dark mode**
+
+Dark mode can be enabled by setting the `dark_mode` flag in your `_config.yml`
+
+The website will check the OS preferred color scheme and set the theme accordingly, the preference will then be saved in a cookie
+
+```yaml
+plainwhite:
+  dark_mode: true
+```
+
+![plainwhite dark theme previe](/dark.png)
+
+**Multiline tagline**
+
+Tagline can be multiline in this way
+
+```yaml
+plainwhite:
+  tagline: |
+  First Line. 
+
+  Second Line. 
+
+  Third Line.
+```
+
+**Search-bar**
+
+Search-bar can be enabled by adding the following line to `config.yml`
+
+```yaml
+plainwhite:
+  search: true
+```
+
+Search is powered by [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search) Jekyll plugin. A `search.json` containing post meta and contents will be generated in site root folder. Plugin JavaScript will then match for posts based on user input. More info and `search.json` customization documentation can be found in plugin repository.
+
+**Base URL**
+
+You can specify a custom base URL (eg. example.com/blog/) by adding the following line to `_config.yaml`. Note that there is no trailing slash on the URL.
+
+```yaml
+baseurl: "/blog"
+```
+
+**Language**
+
+You can set the `lang` attribute of the `<html>` tag on your pages by changing the following line in `_config.yml`:
+
+```yaml
+plainwhite:
+  html_lang: "en"
+```
+
+[See here for a full list of available language codes](https://www.w3schools.com/tags/ref_country_codes.asp)
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/samarsault/plainwhite-jekyll. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `plainwhite.gemspec` accordingly.
+
+## Donation
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/thelehhman)
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## More themes
+
+- [Texture](https://github.com/samarsault/texture)
